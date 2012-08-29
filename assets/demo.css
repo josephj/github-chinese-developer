@@ -1,0 +1,73 @@
+body {
+    text-align: center;
+    background: #f8f8f8 url(noise.png);
+}
+#list {
+    padding: 10px 0 0 10px;
+    min-height: 200px;
+}
+#list .bd ul {
+    zoom: 1;
+}
+#list .bd ul:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+#list li {
+    float: left;
+    width: 200px;
+    height: 220px;
+    margin: 0 10px 10px 0;
+    overflow: hidden;
+}
+
+#list.loading {
+    background: url(loading.gif) center center no-repeat;
+}
+#list li .user-card img {
+    vertical-align: bottom;
+}
+#list li .user-card .main {
+    position: relative;
+}
+#list li .user-card .name {
+    padding: 3px 0;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
+#list li .user-card .name .name-link {
+    background: url(bg_name.png) 0 100% repeat-x;
+    color: #fff;
+    font-family: Calibri;
+    font-size: 16px;
+    font-weight: bold;
+    height: 30px;
+    padding: 20px 5px 0;
+    margin: 0 5px;
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+#list li .user-card .img-link {
+    display: block;
+    width: 180px;
+    height: 180px;
+    overflow: hidden;
+}
+#list li .user-card .info {
+    font-size: 10px;
+}
+#list li .user-card .main {
+    width: 180px;
+    height: 180px;
+    border: solid 1px #ccc;
+    border-radius: 3px;
+    padding: 5px;
+    overflow: hidden;
+}
+body {
+    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+}
