@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background: #f8f8f8 url(noise.png);
+    background: #f8f8f8 url(../images/noise.png);
 }
 
 #filter {
@@ -28,7 +28,7 @@ body {
         overflow: hidden;
     }
     &.loading {
-        background: url(loading.gif) center center no-repeat;
+        background: url(../images/loading.gif) center center no-repeat;
     }
     li .user-card {
         img {
@@ -44,7 +44,7 @@ body {
             bottom: 0;
             width: 100%;
             .name-link {
-                background: url(bg_name.png) 0 100% repeat-x;
+                background: url(../images/bg_name.png) 0 100% repeat-x;
                 color: #fff;
                 font-family: Calibri;
                 font-size: 16px;

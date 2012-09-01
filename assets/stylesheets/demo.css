@@ -1,7 +1,7 @@
 /* line 1, ../sass/demo.scss */
 body {
     text-align: center;
-    background: #f8f8f8 url(noise.png);
+    background: #f8f8f8 url(../images/noise.png);
 }
 
 /* line 7, ../sass/demo.scss */
@@ -34,7 +34,7 @@ body {
 }
 /* line 30, ../sass/demo.scss */
 #list.loading {
-    background: url(loading.gif) center center no-repeat;
+    background: url(../images/loading.gif) center center no-repeat;
 }
 /* line 34, ../sass/demo.scss */
 #list li .user-card img {
@@ -54,7 +54,7 @@ body {
 }
 /* line 46, ../sass/demo.scss */
 #list li .user-card .name .name-link {
-    background: url(bg_name.png) 0 100% repeat-x;
+    background: url(../images/bg_name.png) 0 100% repeat-x;
     color: #fff;
     font-family: Calibri;
     font-size: 16px;

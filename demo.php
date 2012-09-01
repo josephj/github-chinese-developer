@@ -18,7 +18,8 @@ $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
 <link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet">
 <link href="assets/stylesheets/bootstrap-responsive.css" rel="stylesheet">
 <link href="assets/stylesheets/demo.css" rel="stylesheet">
-<script src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
+<script src="assets/javascripts/jquery-1.8.1.min.js"></script>
+<script src="assets/javascripts/handlebars-1.0.0.beta.6.js"></script>
 <script src="assets/javascripts/demo.js"></script>
 </head>
 
