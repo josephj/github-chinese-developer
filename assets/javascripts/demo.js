@@ -40,7 +40,7 @@
                 url: API_ENTRYPOINT + "users/" + key + "?callback={callback}",
                 context: {selector: value}
             }).done(function (o) {
-                $(this.selector + " img").attr("src", "http://www.gravatar.com/avatar/" + o.data.gravatar_id + "?s=180");
+                $(this.selector + " img").attr("src", "http://www.gravatar.com/avatar/" + o.data.gravatar_id + "?s=120");
             });
         });
 

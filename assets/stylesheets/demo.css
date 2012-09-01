@@ -27,8 +27,8 @@ body {
 /* line 23, ../sass/demo.scss */
 #list li {
     float: left;
-    width: 200px;
-    height: 220px;
+    width: 140px;
+    height: 160px;
     margin: 0 10px 10px 0;
     overflow: hidden;
 }
@@ -69,8 +69,8 @@ body {
 /* line 60, ../sass/demo.scss */
 #list li .user-card .img-link {
     display: block;
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     overflow: hidden;
 }
 /* line 66, ../sass/demo.scss */
@@ -79,8 +79,8 @@ body {
 }
 /* line 69, ../sass/demo.scss */
 #list li .user-card .main {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
     border: solid 1px #ccc;
     border-radius: 3px;
     padding: 5px;
