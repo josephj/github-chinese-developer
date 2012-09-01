@@ -1,14 +1,4 @@
-<?php
-$location = (isset($_REQUEST["location"]) && $_REQUEST["location"] !== "") ? htmlspecialchars($_REQUEST["location"]) : "China";
-$language = (isset($_REQUEST["language"]) && $_REQUEST["language"] !== "") ? htmlspecialchars($_REQUEST["language"]) : "JavaScript";
-$locations = array(
-    "China" => "中國大陸",
-    "Taiwan" => "台灣",
-    "Hong Kong" => "香港",
-    "China,Taiwan" => "兩岸三地",
-);
-$languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
-?><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
 <meta charset="utf-8">
@@ -21,9 +11,8 @@ $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
 <script src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
 <script src="assets/javascripts/demo.js"></script>
 </head>
-
-  <body>
-
+<body>
+    <!-- #filter (start) -->
     <div id="filter" class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
@@ -32,25 +21,21 @@ $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
                     <span class="field">
                         <label class="control-label" for="location">地區：</label>
                         <select id="location" name="location">
-<?php
-      foreach ($locations as $key=>$value) :
-          $selected = ($key === $location) ? " selected": "";
-?>
-                            <option value="<?php echo $key; ?>" <?php echo $selected;?>><?php echo $value; ?></option>
-
-<?php endforeach; ?>
+                            <option value="China">中國大陸</option>
+                            <option value="Taiwan">台灣</option>
+                            <option value="Hong Kong">香港</option>
+                            <option value="China,Taiwan,Hong Kong">兩岸三地</option>
                         </select>
                     </span>
                     <span class="field">
                         <label class="control-label" for="language">語言：</label>
                         <select id="language" name="language">
-<?php
-      foreach ($languages as $value) :
-          $selected = ($value === $language) ? " selected": "";
-?>
-                            <option<?php echo $selected;?>><?php echo $value; ?></option>
-
-<?php endforeach; ?>
+                            <option value="">全部</option>
+                            <option>PHP</option>
+                            <option>Ruby</option>
+                            <option>Python</option>
+                            <option>JavaScript</option>
+                            <option>Perl</option>
                         </select>
                     </span>
                     <button type="submit" value="Find" class="btn btn-primary">Find</button>
@@ -58,14 +43,9 @@ $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
             </div>
         </div>
     </div>
+    <!-- #filter (end) -->
 
     <div class="container">
-
-        <!-- #filter (start) -->
-        <div id="filter">
-        </div>
-        <!-- #filter (end) -->
-
         <!-- #list (start) -->
         <div id="list">
             <div class="bd">
@@ -101,8 +81,6 @@ $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
             </li>
         </script>
         <!-- #tpl-user (end) -->
-
     </div> <!-- /container -->
-
 </body>
 </html>
