@@ -9,24 +9,15 @@ $locations = array(
 );
 $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
 ?><!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
 <meta charset="utf-8">
-<title>GitHub Users</title>
+<title>兩岸三地的 Github 開發者</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="josephj">
 <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="assets/demo.css" rel="stylesheet">
 <link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-<![endif]-->
-<link rel="shortcut icon" href="../assets/ico/favicon.ico">
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="../assets/ico/apple-touch-icon-144-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="114x114" href="../assets/ico/apple-touch-icon-114-precomposed.png">
-<link rel="apple-touch-icon-precomposed" sizes="72x72" href="../assets/ico/apple-touch-icon-72-precomposed.png">
-<link rel="apple-touch-icon-precomposed" href="../assets/ico/apple-touch-icon-57-precomposed.png">
+<link href="assets/demo.css" rel="stylesheet">
 <script type="text/javascript" src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
 <script src="assets/demo.js"></script>
 </head>
@@ -64,7 +55,7 @@ $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
                         <select id="language" name="language">
 <?php
       foreach ($languages as $value) :
-          $selected = ($key === $value) ? " selected": "";
+          $selected = ($value === $language) ? " selected": "";
 ?>
                             <option<?php echo $selected;?>><?php echo $value; ?></option>
 
