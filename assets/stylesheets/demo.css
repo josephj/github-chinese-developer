@@ -1,19 +1,30 @@
+/* line 1, ../sass/demo.scss */
 body {
     text-align: center;
     background: #f8f8f8 url(noise.png);
 }
+
+/* line 7, ../sass/demo.scss */
+#filter form {
+    margin: 0;
+}
+
+/* line 12, ../sass/demo.scss */
 #list {
     padding: 10px 0 0 10px;
     min-height: 200px;
 }
+/* line 15, ../sass/demo.scss */
 #list .bd ul {
     zoom: 1;
 }
+/* line 17, ../sass/demo.scss */
 #list .bd ul:after {
     content: "";
     clear: both;
     display: block;
 }
+/* line 23, ../sass/demo.scss */
 #list li {
     float: left;
     width: 200px;
@@ -21,16 +32,19 @@ body {
     margin: 0 10px 10px 0;
     overflow: hidden;
 }
-
+/* line 30, ../sass/demo.scss */
 #list.loading {
     background: url(loading.gif) center center no-repeat;
 }
+/* line 34, ../sass/demo.scss */
 #list li .user-card img {
     vertical-align: bottom;
 }
+/* line 37, ../sass/demo.scss */
 #list li .user-card .main {
     position: relative;
 }
+/* line 40, ../sass/demo.scss */
 #list li .user-card .name {
     padding: 3px 0;
     position: absolute;
@@ -38,6 +52,7 @@ body {
     bottom: 0;
     width: 100%;
 }
+/* line 46, ../sass/demo.scss */
 #list li .user-card .name .name-link {
     background: url(bg_name.png) 0 100% repeat-x;
     color: #fff;
@@ -51,15 +66,18 @@ body {
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+/* line 60, ../sass/demo.scss */
 #list li .user-card .img-link {
     display: block;
     width: 180px;
     height: 180px;
     overflow: hidden;
 }
+/* line 66, ../sass/demo.scss */
 #list li .user-card .info {
     font-size: 10px;
 }
+/* line 69, ../sass/demo.scss */
 #list li .user-card .main {
     width: 180px;
     height: 180px;
@@ -68,6 +86,9 @@ body {
     padding: 5px;
     overflow: hidden;
 }
+
+/* line 80, ../sass/demo.scss */
 body {
-    padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+    padding-top: 60px;
+  /* 60px to make the container go all the way to the bottom of the topbar */
 }

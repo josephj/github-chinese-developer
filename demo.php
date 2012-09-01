@@ -15,28 +15,19 @@ $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
 <title>兩岸三地的 Github 開發者</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="author" content="josephj">
-<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="assets/demo.css" rel="stylesheet">
-<script type="text/javascript" src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
-<script src="assets/demo.js"></script>
+<link href="assets/stylesheets/bootstrap.min.css" rel="stylesheet">
+<link href="assets/stylesheets/bootstrap-responsive.css" rel="stylesheet">
+<link href="assets/stylesheets/demo.css" rel="stylesheet">
+<script src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
+<script src="assets/javascripts/demo.js"></script>
 </head>
 
   <body>
 
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div id="filter" class="navbar navbar-inverse navbar-fixed-top">
         <div class="navbar-inner">
             <div class="container">
                 <a class="brand" href="#">兩岸三地的 GitHub 開發者</a>
-            </div>
-        </div>
-    </div>
-
-    <div class="container">
-
-        <!-- #filter (start) -->
-        <div id="filter">
-            <div class="bd">
                 <form method="get" class="form-inline">
                     <span class="field">
                         <label class="control-label" for="location">地區：</label>
@@ -65,6 +56,13 @@ $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
                     <button type="submit" value="Find" class="btn btn-primary">Find</button>
                 </form>
             </div>
+        </div>
+    </div>
+
+    <div class="container">
+
+        <!-- #filter (start) -->
+        <div id="filter">
         </div>
         <!-- #filter (end) -->
 
