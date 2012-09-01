@@ -84,7 +84,7 @@ $languages = array("", "PHP", "Ruby", "Python", "JavaScript", "Perl");
 
         <!-- #tpl-user (start) -->
         <script id="tpl-user" type="text/x-handlebars-template">
-            <li>
+            <li id="{{element_id}}">
                 <div class="user-card">
                     <div class="main">
                         <div class="name">
