@@ -18,6 +18,10 @@
         margin: 0 10px 10px 0;
         overflow: hidden;
     }
+    li.selected .user-card div.main {
+        border-color: #a00;
+        background: yellow;
+    }
     &.loading {
         background: url(../images/loading.gif) center center no-repeat;
     }

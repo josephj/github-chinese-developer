@@ -24,18 +24,23 @@
     overflow: hidden;
 }
 /* line 21, ../sass/_list.scss */
+#list li.selected .user-card div.main {
+    border-color: #a00;
+    background: yellow;
+}
+/* line 25, ../sass/_list.scss */
 #list.loading {
     background: url(../images/loading.gif) center center no-repeat;
 }
-/* line 25, ../sass/_list.scss */
+/* line 29, ../sass/_list.scss */
 #list li .user-card img {
     vertical-align: bottom;
 }
-/* line 28, ../sass/_list.scss */
+/* line 32, ../sass/_list.scss */
 #list li .user-card .main {
     position: relative;
 }
-/* line 31, ../sass/_list.scss */
+/* line 35, ../sass/_list.scss */
 #list li .user-card .name {
     padding: 3px 0;
     position: absolute;
@@ -43,7 +48,7 @@
     bottom: 0;
     width: 100%;
 }
-/* line 37, ../sass/_list.scss */
+/* line 41, ../sass/_list.scss */
 #list li .user-card .name .name-link {
     background: url(../images/bg_name.png) 0 100% repeat-x;
     color: #fff;
@@ -57,18 +62,18 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-/* line 51, ../sass/_list.scss */
+/* line 55, ../sass/_list.scss */
 #list li .user-card .img-link {
     display: block;
     width: 120px;
     height: 120px;
     overflow: hidden;
 }
-/* line 57, ../sass/_list.scss */
+/* line 61, ../sass/_list.scss */
 #list li .user-card .info {
     font-size: 10px;
 }
-/* line 60, ../sass/_list.scss */
+/* line 64, ../sass/_list.scss */
 #list li .user-card .main {
     width: 120px;
     height: 120px;

@@ -5,6 +5,7 @@ YUI.add("_list", function (Y) {
         _node,
         _keyword,
         _users,
+        _activeNode,
         //================
         // Constants
         //================
@@ -18,6 +19,7 @@ YUI.add("_list", function (Y) {
         // Event Handlers
         //================
         _handleCallback,
+        _handleClick,
         _handleResize,
         _handleSubmit,
         _handleMessage,
@@ -66,6 +68,8 @@ YUI.add("_list", function (Y) {
                         if (counter === Y.Object.size(tasks)) {
                             _cache.add(_keyword, Y.JSON.stringify(users));
                             _api.log("The user data has been saved to cache.");
+                            Y.one("#user-0").addClass("selected");
+                            _activeNode = Y.one("#user-0");
                             _api.broadcast("show-user", users[0]);
                             _users = users;
                         }
@@ -74,6 +78,22 @@ YUI.add("_list", function (Y) {
                 args: [value, key]
             });
         });
+    };
+
+    _handleClick = function (e) {
+        e.halt();
+        if (!_users) {
+            return;
+        }
+        var node = e.currentTarget,
+            key = node.get("id").split("-")[1];
+
+        if (_activeNode) {
+            _activeNode.removeClass("selected");
+        }
+        node.addClass("selected");
+        _activeNode = node;
+        _api.broadcast("show-user", _users[key]);
     };
 
     _handleMessage = function (e) {
@@ -88,6 +108,8 @@ YUI.add("_list", function (Y) {
         if (e.name !== "change-condition") {
             return;
         }
+
+        _users = null;
 
         // Clear existing content.
         _node.one(".bd").setContent("");
@@ -134,6 +156,7 @@ YUI.add("_list", function (Y) {
         _node = _api.get("node");
         _node.setStyle("height", (_node.get("winHeight") - _node.getY() - 10) + "px");
         Y.on("windowresize", _handleResize);
+        _node.delegate("click", _handleClick, "li");
     };
 
     _handleResize = function () {
@@ -150,4 +173,4 @@ YUI.add("_list", function (Y) {
         }
     });
 
-}, "0.0.1", {requires: ["module", "handlebars", "cache", "jsonp", "node-style", "node-screen", "event-resize"]});
+}, "0.0.1", {requires: ["node-event-delegate", "module", "handlebars", "cache", "jsonp", "node-style", "node-screen", "event-resize"]});
