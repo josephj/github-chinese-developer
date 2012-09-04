@@ -10,3 +10,6 @@
 [submodule "lib/minify"]
 	path = lib/minify
 	url = git://github.com/josephj/minify.git
+[submodule "lib/static-loader"]
+	path = lib/static-loader
+	url = git@github.com:josephj/static-loader.git
