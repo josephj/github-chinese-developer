@@ -1,0 +1,3 @@
+[submodule "assets/javascripts/module"]
+	path = assets/javascripts/module
+	url = git@github.com:miiicasa/module.git
