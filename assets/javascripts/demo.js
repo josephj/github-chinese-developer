@@ -1,5 +1,5 @@
 /*global YUI */
-YUI().use("json", "cache", "jsonp", "node", "event", "handlebars", function (Y) {
+YUI().use("cookie", "json", "cache", "jsonp", "node", "event", "handlebars", function (Y) {
 
     var _listNode,
         _formNode,
@@ -66,6 +66,9 @@ YUI().use("json", "cache", "jsonp", "node", "event", "handlebars", function (Y) 
             cache,
             keyword;
 
+        Y.Cookie.set("location", where);
+        Y.Cookie.set("language", lang);
+
         if (where.indexOf(",") !== -1) {
             Y.each(where.split(","), function (loc) {
                 keyword += "location: " + loc + " ";
@@ -96,12 +99,21 @@ YUI().use("json", "cache", "jsonp", "node", "event", "handlebars", function (Y) 
     _cache = new Y.CacheOffline();
 
     Y.on("domready", function () {
-        _listNode = Y.one("#list");
+        var whereNode, langNode;
         _formNode = Y.one("#filter form");
+        _listNode = Y.one("#list");
         _template = Y.Handlebars.compile(Y.one("#tpl-user").getHTML());
         _formNode.on("submit", _handleSubmit);
-        _formNode.one("#language").on("change", _handleSubmit);
-        _formNode.one("#location").on("change", _handleSubmit);
+        langNode = _formNode.one("#language");
+        langNode.on("change", _handleSubmit);
+        whereNode = _formNode.one("#location");
+        whereNode.on("change", _handleSubmit);
+        if (Y.Cookie.get("location")) {
+            whereNode.set("value", Y.Cookie.get("location"));
+        }
+        if (Y.Cookie.get("language")) {
+            langNode.set("value", Y.Cookie.get("language"));
+        }
         _makeRequest();
     });
 
