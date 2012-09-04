@@ -1,3 +1,6 @@
 [submodule "assets/javascripts/module"]
         path = assets/javascripts/module
         url = git://github.com/josephj/github-chinese-developer.git
+[submodule "lib/mini"]
+	path = lib/mini
+	url = git@github.com:josephj/mini.git
