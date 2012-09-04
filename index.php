@@ -7,4 +7,5 @@
 <?php include_once "inc/_list.php"; ?>
 </div>
 <?php include_once "inc/_tpl_user.php"; ?>
+<?php include_once "inc/_tpl_info.php"; ?>
 <?php include_once "inc/_after_body.php"; ?>

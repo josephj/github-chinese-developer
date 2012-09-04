@@ -8,6 +8,7 @@
 <link href="assets/stylesheets/base.css" rel="stylesheet">
 <link href="assets/stylesheets/_filter.css" rel="stylesheet">
 <link href="assets/stylesheets/_list.css" rel="stylesheet">
+<link href="assets/stylesheets/_info.css" rel="stylesheet">
 <script src="http://yui.yahooapis.com/3.6.0/build/yui/yui-min.js"></script>
 <script src="assets/javascripts/module/module.js"></script>
 <script src="assets/javascripts/module/module-manager.js"></script>

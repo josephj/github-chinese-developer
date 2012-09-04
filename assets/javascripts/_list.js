@@ -4,6 +4,7 @@ YUI.add("_list", function (Y) {
         _template,
         _node,
         _keyword,
+        _users,
         //================
         // Constants
         //================
@@ -57,13 +58,16 @@ YUI.add("_list", function (Y) {
                 on: {
                     success: function (o, selector, key) {
                         Y.one(selector + " img").set("src", "http://www.gravatar.com/avatar/" + o.data.gravatar_id + "?s=120");
-                        users[selector.split("-")[1]].gravatar_id = o.data.gravatar_id;
+                        var key = selector.split("-")[1];
+                        users[key] = Y.mix(users[key], o.data);
                         counter += 1;
 
                         // Save to cache.
                         if (counter === Y.Object.size(tasks)) {
                             _cache.add(_keyword, Y.JSON.stringify(users));
                             _api.log("The user data has been saved to cache.");
+                            _api.broadcast("show-user", users[0]);
+                            _users = users;
                         }
                     }
                 },
@@ -110,7 +114,9 @@ YUI.add("_list", function (Y) {
             Y.each(users, function (user, key) {
                 html.push(_template(user));
             });
+            _users = users;
             _node.one(".bd").setContent("<ul>" + html.join("") + "</ul>");
+            _api.broadcast("show-user", users[0]);
             return;
         }
 
@@ -127,10 +133,11 @@ YUI.add("_list", function (Y) {
         _template = Y.Handlebars.compile(Y.one("#tpl-user").getHTML());
         _node = _api.get("node");
         _node.setStyle("height", (_node.get("winHeight") - _node.getY() - 10) + "px");
-        Y.on("windowResize", _handleResize);
+        Y.on("windowresize", _handleResize);
     };
 
     _handleResize = function () {
+        _api.log("_handleResize() is executed.");
         _node.setStyle("height", (_node.get("winHeight") - _node.getY() - 10) + "px");
     };
 
@@ -143,4 +150,4 @@ YUI.add("_list", function (Y) {
         }
     });
 
-}, "0.0.1", {requires: ["module", "handlebars", "cache", "jsonp", "node-style", "node-screen"]});
+}, "0.0.1", {requires: ["module", "handlebars", "cache", "jsonp", "node-style", "node-screen", "event-resize"]});

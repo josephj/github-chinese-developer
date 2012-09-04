@@ -8,14 +8,19 @@ YUI.add("_info", function (Y) {
 
     _init = function (sandbox) {
         _api = sandbox;
+        _api.listen("show-user");
+    };
+
+    _handleMessage = function (e) {
+        if (e.name === "show-user") {
+            _node.setContent(_template(e.data));
+        }
     };
 
     _handleViewload = function () {
         _api.log("_handleViewload() is executed.");
-    };
-
-    _handleMessage = function () {
-        _api.log("_handleMessage() is executed.");
+        _node = _api.get("node");
+        _template = Y.Handlebars.compile(Y.one("#tpl-info").getHTML());
     };
 
     _api = new Y.Module({
@@ -27,4 +32,4 @@ YUI.add("_info", function (Y) {
         }
     });
 
-}, "0.0.1", {requires: ["module", "node-base", "cookie"]});
+}, "0.0.1", {requires: ["module", "node-base", "handlebars"]});

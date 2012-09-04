@@ -1,0 +1,8 @@
+/* line 1, ../sass/_info.scss */
+#info {
+    background: yellow;
+    width: 250px;
+    position: absolute;
+    top: 30px;
+    text-align: left;
+}
