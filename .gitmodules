@@ -7,3 +7,6 @@
 [submodule "assets/javascripts/yui3"]
 	path = assets/javascripts/yui3
 	url = git://github.com/yui/yui3.git
+[submodule "lib/minify"]
+	path = lib/minify
+	url = git://github.com/josephj/minify.git
