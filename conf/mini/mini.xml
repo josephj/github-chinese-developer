@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mini xmlns:xi="http://www.w3.org/2001/XInclude">
+
+    <path type="css">$DEV_ROOT/assets</path>
+    <path type="js">$DEV_ROOT/assets</path>
+
+    <module id="demo">
+        <file type="css" src="stylesheets/bootstrap.min.css" />
+        <file type="css" src="stylesheets/base.css" />
+        <file type="css" src="stylesheets/_filter.css" />
+        <file type="css" src="stylesheets/_list.css" />
+        <file type="css" src="stylesheets/_info.css" />
+        <file type="js" src="javascripts/yui3/build/yui/yui.js" />
+        <file type="js" src="javascripts/module/module.js" />
+        <file type="js" src="javascripts/module/module-manager.js" />
+        <file type="js" src="javascripts/_filter.js" />
+        <file type="js" src="javascripts/_list.js" />
+        <file type="js" src="javascripts/_info.js" />
+        <file type="js" src="javascripts/demo.js" />
+    </module>
+
+</mini>
