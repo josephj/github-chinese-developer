@@ -1,0 +1,11 @@
+@import "compass";
+
+#filter {
+    &.navbar {
+        margin-bottom: 0;
+    }
+    form {
+        margin: 0;
+    }
+    @include border-radius(0);
+}

@@ -1,0 +1,6 @@
+/* line 1, ../sass/base.scss */
+body {
+    text-align: center;
+    background: #f8f8f8 url(../images/noise.png);
+    overflow: hidden;
+}
