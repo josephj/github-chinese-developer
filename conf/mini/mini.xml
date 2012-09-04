@@ -11,6 +11,47 @@
         <file type="css" src="stylesheets/_list.css" />
         <file type="css" src="stylesheets/_info.css" />
         <file type="js" src="javascripts/yui3/build/yui/yui.js" />
+        <!--
+        <file type="js" src="javascripts/yui3/build/handlebars-compiler/handlebars-compiler.js" />
+        <file type="js" src="javascripts/yui3/build/cookie/cookie.js" />
+        <file type="js" src="javascripts/yui3/build/event-delegate/event-delegate.js" />
+        <file type="js" src="javascripts/yui3/build/node-event-delegate/node-event-delegate.js" />
+        <file type="js" src="javascripts/yui3/build/cache-base/cache-base.js" />
+        <file type="js" src="javascripts/yui3/build/json-parse/json-parse.js" />
+        <file type="js" src="javascripts/yui3/build/json-stringify/json-stringify.js" />
+        <file type="js" src="javascripts/yui3/build/cache-offline/cache-offline.js" />
+        <file type="js" src="javascripts/yui3/build/plugin/plugin.js" />
+        <file type="js" src="javascripts/yui3/build/cache-plugin/cache-plugin.js" />
+        <file type="js" src="javascripts/yui3/build/jsonp/jsonp.js" />
+        <file type="js" src="javascripts/yui3/build/dom-style/dom-style.js" />
+        <file type="js" src="javascripts/yui3/build/node-style/node-style.js" />
+        <file type="js" src="javascripts/yui3/build/dom-screen/dom-screen.js" />
+        <file type="js" src="javascripts/yui3/build/node-screen/node-screen.js" />
+        <file type="js" src="javascripts/yui3/build/event-synthetic/event-synthetic.js" />
+        <file type="js" src="javascripts/yui3/build/event-resize/event-resize.js" />
+        <file type="js" src="javascripts/yui3/build/oop/oop.js" />
+        <file type="js" src="javascripts/yui3/build/attribute-core/attribute-core.js" />
+        <file type="js" src="javascripts/yui3/build/base-core/base-core.js" />
+        <file type="js" src="javascripts/yui3/build/event-custom-base/event-custom-base.js" />
+        <file type="js" src="javascripts/yui3/build/event-custom-complex/event-custom-complex.js" />
+        <file type="js" src="javascripts/yui3/build/attribute-events/attribute-events.js" />
+        <file type="js" src="javascripts/yui3/build/attribute-extras/attribute-extras.js" />
+        <file type="js" src="javascripts/yui3/build/attribute-base/attribute-base.js" />
+        <file type="js" src="javascripts/yui3/build/base-base/base-base.js" />
+        <file type="js" src="javascripts/yui3/build/pluginhost-base/pluginhost-base.js" />
+        <file type="js" src="javascripts/yui3/build/pluginhost-config/pluginhost-config.js" />
+        <file type="js" src="javascripts/yui3/build/base-pluginhost/base-pluginhost.js" />
+        <file type="js" src="javascripts/yui3/build/base-build/base-build.js" />
+        <file type="js" src="javascripts/yui3/build/dom-core/dom-core.js" />
+        <file type="js" src="javascripts/yui3/build/dom-base/dom-base.js" />
+        <file type="js" src="javascripts/yui3/build/selector-native/selector-native.js" />
+        <file type="js" src="javascripts/yui3/build/selector/selector.js" />
+        <file type="js" src="javascripts/yui3/build/node-core/node-core.js" />
+        <file type="js" src="javascripts/yui3/build/node-base/node-base.js" />
+        <file type="js" src="javascripts/yui3/build/event-base/event-base.js" />
+        <file type="js" src="javascripts/yui3/build/escape/escape.js" />
+        <file type="js" src="javascripts/yui3/build/handlebars-base/handlebars-base.js" />
+        -->
         <file type="js" src="javascripts/module/module.js" />
         <file type="js" src="javascripts/module/module-manager.js" />
         <file type="js" src="javascripts/_filter.js" />
