@@ -30,7 +30,7 @@
 }
 /* line 25, ../sass/_list.scss */
 #list.loading {
-    background: url(../images/loading.gif) center center no-repeat;
+    background: url(/github-chinese-developer/assets/images/loading.gif) center center no-repeat;
 }
 /* line 29, ../sass/_list.scss */
 #list li .user-card img {
@@ -50,7 +50,7 @@
 }
 /* line 41, ../sass/_list.scss */
 #list li .user-card .name .name-link {
-    background: url(../images/bg_name.png) 0 100% repeat-x;
+    background: url(/github-chinese-developer/assets/images/bg_name.png) 0 100% repeat-x;
     color: #fff;
     font-family: Calibri;
     font-size: 16px;
