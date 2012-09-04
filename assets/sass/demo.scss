@@ -1,6 +1,6 @@
 body {
     text-align: center;
-    background: #f8f8f8 url(noise.png);
+    background: #f8f8f8 url(../images/noise.png);
 }
 
 #filter {
@@ -22,13 +22,13 @@ body {
     }
     li {
         float: left;
-        width: 200px;
-        height: 220px;
+        width: 140px;
+        height: 160px;
         margin: 0 10px 10px 0;
         overflow: hidden;
     }
     &.loading {
-        background: url(loading.gif) center center no-repeat;
+        background: url(../images/loading.gif) center center no-repeat;
     }
     li .user-card {
         img {
@@ -44,7 +44,7 @@ body {
             bottom: 0;
             width: 100%;
             .name-link {
-                background: url(bg_name.png) 0 100% repeat-x;
+                background: url(../images/bg_name.png) 0 100% repeat-x;
                 color: #fff;
                 font-family: Calibri;
                 font-size: 16px;
@@ -59,16 +59,16 @@ body {
         }
         .img-link {
             display: block;
-            width: 180px;
-            height: 180px;
+            width: 120px;
+            height: 120px;
             overflow: hidden;
         }
         .info {
             font-size: 10px;
         }
         .main {
-            width: 180px;
-            height: 180px;
+            width: 120px;
+            height: 120px;
             border: solid 1px #ccc;
             border-radius: 3px;
             padding: 5px;

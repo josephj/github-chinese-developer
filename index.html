@@ -63,14 +63,14 @@
 
         <!-- #tpl-user (start) -->
         <script id="tpl-user" type="text/x-handlebars-template">
-            <li>
+            <li id="{{element_id}}">
                 <div class="user-card">
                     <div class="main">
                         <div class="name">
                             <a href="http://github.com/{{username}}" data-username="{{username}}" target="_blank" class="name-link">{{name}}</a>
                         </div>
                         <a href="http://github.com/{{username}}" data-username="{{username}}" target="_blank" class="img-link">
-                            <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s=180">
+                            <img src="http://www.gravatar.com/avatar/{{gravatar_id}}?s=120">
                         </a>
                     </div>
                     <div class="info">
