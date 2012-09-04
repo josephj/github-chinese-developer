@@ -1,8 +1,10 @@
+/*global YUI */
 YUI.add("_info", function (Y) {
 
     var _api,
         _init,
         _node,
+        _template,
         _handleMessage,
         _handleViewload;
 

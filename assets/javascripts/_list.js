@@ -1,11 +1,13 @@
+/*global YUI */
 YUI.add("_list", function (Y) {
 
     var _api,
+        _activeNode,
+        _cache,
         _template,
         _node,
         _keyword,
         _users,
-        _activeNode,
         //================
         // Constants
         //================
@@ -58,7 +60,7 @@ YUI.add("_list", function (Y) {
         Y.each(tasks, function (value, key) {
             Y.jsonp(API_ENTRYPOINT + "users/" + key + "?callback={callback}", {
                 on: {
-                    success: function (o, selector, key) {
+                    success: function (o, selector) {
                         Y.one(selector + " img").set("src", "http://www.gravatar.com/avatar/" + o.data.gravatar_id + "?s=120");
                         var key = selector.split("-")[1];
                         users[key] = Y.mix(users[key], o.data);
@@ -75,7 +77,7 @@ YUI.add("_list", function (Y) {
                         }
                     }
                 },
-                args: [value, key]
+                args: [value]
             });
         });
     };
@@ -101,6 +103,7 @@ YUI.add("_list", function (Y) {
         var data  = e.data,
             where = data.location,
             lang  = data.language,
+            html = [],
             users,
             cache,
             keyword;
@@ -124,15 +127,14 @@ YUI.add("_list", function (Y) {
             keyword = "location:" + encodeURIComponent(where);
         }
         keyword += (Y.Lang.trim(lang)) ? " language:" + lang : "";
-        _api.get("The search keyword for GitHub API is '" + keyword + "'")
+        _api.get("The search keyword for GitHub API is '" + keyword + "'");
 
         // Use cache if it has.
         _keyword = keyword.replace(/:/g, "_").replace(/ /g, "_").toLowerCase();
         cache = _cache.retrieve(_keyword);
         if (cache) {
-            _api.log("Use cache in local storage.")
+            _api.log("Use cache in local storage.");
             users = Y.JSON.parse(cache.response);
-            html = [];
             Y.each(users, function (user, key) {
                 html.push(_template(user));
             });
@@ -142,7 +144,7 @@ YUI.add("_list", function (Y) {
             return;
         }
 
-        _api.log("No cache exists, make request to GitHub API.")
+        _api.log("No cache exists, make request to GitHub API.");
 
         // Show activity indicator.
         _node.addClass("loading");

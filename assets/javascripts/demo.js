@@ -1,3 +1,4 @@
+/*global YUI */
 YUI({
     logExclude: {
         "Y.ModuleManager": true,

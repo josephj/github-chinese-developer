@@ -1,3 +1,4 @@
+/*global YUI */
 YUI.add("_filter", function (Y) {
 
     var _api,

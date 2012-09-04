@@ -1,2 +1,0 @@
-YUI.add("demo", function () {
-})
