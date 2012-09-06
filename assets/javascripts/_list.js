@@ -3,6 +3,7 @@ YUI.add("_list", function (Y) {
 
     var _api,
         _activeNode,
+        _bodyNode,
         _cache,
         _template,
         _node,
@@ -16,6 +17,7 @@ YUI.add("_list", function (Y) {
         //================
         // Methods
         //================
+        _fillHeight,
         _init,
         //================
         // Event Handlers
@@ -26,6 +28,11 @@ YUI.add("_list", function (Y) {
         _handleSubmit,
         _handleMessage,
         _handleViewload;
+
+    _fillHeight = function () {
+        _api.log("_fillHeight() is executed.");
+        _node.setStyle("height", (_node.get("winHeight") - _node.getY() - 10) + "px");
+    };
 
     _init = function (sandbox) {
         _api = sandbox;
@@ -54,7 +61,7 @@ YUI.add("_list", function (Y) {
         });
 
         // Output the HTML.
-        _node.one(".bd").setContent("<ul>" + html.join("") + "</ul>");
+        _bodyNode.setContent("<ul>" + html.join("") + "</ul>");
 
         // Make extra requests to get G-Avatar Icons.
         Y.each(tasks, function (value, key) {
@@ -70,10 +77,10 @@ YUI.add("_list", function (Y) {
                         if (counter === Y.Object.size(tasks)) {
                             _cache.add(_keyword, Y.JSON.stringify(users));
                             _api.log("The user data has been saved to cache.");
-                            Y.one("#user-0").addClass("selected");
+                            _node.one("#user-0").addClass("selected");
                             _activeNode = Y.one("#user-0");
-                            _api.broadcast("show-user", users[0]);
                             _users = users;
+                            _api.broadcast("show-user", users[0]);
                         }
                     }
                 },
@@ -106,7 +113,8 @@ YUI.add("_list", function (Y) {
             html = [],
             users,
             cache,
-            keyword;
+            keyword,
+            url;
 
         if (e.name !== "change-condition") {
             return;
@@ -115,7 +123,7 @@ YUI.add("_list", function (Y) {
         _users = null;
 
         // Clear existing content.
-        _node.one(".bd").setContent("");
+        _bodyNode.setContent("");
 
         // Get the search keyword.
         if (where.indexOf(",") !== -1) {
@@ -139,7 +147,7 @@ YUI.add("_list", function (Y) {
                 html.push(_template(user));
             });
             _users = users;
-            _node.one(".bd").setContent("<ul>" + html.join("") + "</ul>");
+            _bodyNode.setContent("<ul>" + html.join("") + "</ul>");
             _api.broadcast("show-user", users[0]);
             return;
         }
@@ -149,21 +157,51 @@ YUI.add("_list", function (Y) {
         // Show activity indicator.
         _node.addClass("loading");
 
-        Y.jsonp(API_ENTRYPOINT + "legacy/user/search/" + keyword + "?callback={callback}", _handleCallback);
+        url = API_ENTRYPOINT + "legacy/user/search/" + keyword +
+              "?callback={callback}";
+        Y.jsonp(url, {
+            on: {
+                success: _handleCallback,
+                failure: function () {
+                    _api.log("The GitHub API is currently unavailable." +
+                             "Please check your internet connection.", "error");
+
+                    // Remove the activator indicator.
+                    _node.removeClass("loading");
+                    _bodyNode.setContent('<p class="msg">無法存取 GitHub API</p>');
+
+                },
+                timeout: function () {
+                    _api.log("It takes too much time connecting to GitHub API." +
+                             "Please try again later", "error");
+
+                    // Remove the activator indicator.
+                    _node.removeClass("loading");
+                    _bodyNode.setContent('<p class="msg">連線時間過久、請稍後再試！</p>');
+                }
+            }
+        })
     };
 
     _handleViewload = function (e) {
         _api.log("_handleViewload() is executed.");
-        _template = Y.Handlebars.compile(Y.one("#tpl-user").getHTML());
         _node = _api.get("node");
-        _node.setStyle("height", (_node.get("winHeight") - _node.getY() - 10) + "px");
+        _bodyNode = _node.one(".bd");
+
+        // Compile the handlebar template.
+        _template = Y.Handlebars.compile(Y.one("#tpl-user").getHTML());
+
+        // Adjust height of this module.
+        _fillHeight();
+
+        // Bind events.
         Y.on("windowresize", _handleResize);
         _node.delegate("click", _handleClick, "li");
     };
 
     _handleResize = function () {
         _api.log("_handleResize() is executed.");
-        _node.setStyle("height", (_node.get("winHeight") - _node.getY() - 10) + "px");
+        _fillHeight();
     };
 
     _api = new Y.Module({

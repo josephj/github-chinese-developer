@@ -5,17 +5,23 @@
     overflow: auto;
     height: 500px;
 }
-/* line 6, ../sass/_list.scss */
+/* line 7, ../sass/_list.scss */
 #list .bd ul {
     zoom: 1;
 }
-/* line 8, ../sass/_list.scss */
+/* line 9, ../sass/_list.scss */
 #list .bd ul:after {
     content: "";
     clear: both;
     display: block;
 }
-/* line 14, ../sass/_list.scss */
+/* line 15, ../sass/_list.scss */
+#list .bd .msg {
+    color: #f00;
+    font-size: 36px;
+    padding: 50px;
+}
+/* line 21, ../sass/_list.scss */
 #list li {
     float: left;
     width: 140px;
@@ -23,24 +29,24 @@
     margin: 0 10px 10px 0;
     overflow: hidden;
 }
-/* line 21, ../sass/_list.scss */
+/* line 28, ../sass/_list.scss */
 #list li.selected .user-card div.main {
     border-color: #a00;
     background: yellow;
 }
-/* line 25, ../sass/_list.scss */
+/* line 32, ../sass/_list.scss */
 #list.loading {
     background: url(/github-chinese-developer/assets/images/loading.gif) center center no-repeat;
 }
-/* line 29, ../sass/_list.scss */
+/* line 36, ../sass/_list.scss */
 #list li .user-card img {
     vertical-align: bottom;
 }
-/* line 32, ../sass/_list.scss */
+/* line 39, ../sass/_list.scss */
 #list li .user-card .main {
     position: relative;
 }
-/* line 35, ../sass/_list.scss */
+/* line 42, ../sass/_list.scss */
 #list li .user-card .name {
     padding: 3px 0;
     position: absolute;
@@ -48,7 +54,7 @@
     bottom: 0;
     width: 100%;
 }
-/* line 41, ../sass/_list.scss */
+/* line 48, ../sass/_list.scss */
 #list li .user-card .name .name-link {
     background: url(/github-chinese-developer/assets/images/bg_name.png) 0 100% repeat-x;
     color: #fff;
@@ -62,18 +68,18 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
-/* line 55, ../sass/_list.scss */
+/* line 62, ../sass/_list.scss */
 #list li .user-card .img-link {
     display: block;
     width: 120px;
     height: 120px;
     overflow: hidden;
 }
-/* line 61, ../sass/_list.scss */
+/* line 68, ../sass/_list.scss */
 #list li .user-card .info {
     font-size: 10px;
 }
-/* line 64, ../sass/_list.scss */
+/* line 71, ../sass/_list.scss */
 #list li .user-card .main {
     width: 120px;
     height: 120px;

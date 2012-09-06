@@ -3,12 +3,19 @@
     margin-left: 300px;
     overflow: auto;
     height: 500px;
-    .bd ul {
-        zoom: 1;
-        &:after {
-            content: "";
-            clear: both;
-            display: block;
+    .bd {
+        ul {
+            zoom: 1;
+            &:after {
+                content: "";
+                clear: both;
+                display: block;
+            }
+        }
+        .msg {
+            color: #f00;
+            font-size: 36px;
+            padding: 50px;
         }
     }
     li {
