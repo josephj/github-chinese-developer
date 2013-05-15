@@ -63,6 +63,18 @@ YUI.add("_list", function (Y) {
         // Output the HTML.
         _bodyNode.setContent("<ul>" + html.join("") + "</ul>");
 
+        if (!Y.Object.size(tasks)) {
+            // Save to cache.
+            Y.log(_keyword);
+            _cache.add(_keyword, Y.JSON.stringify(users));
+            _api.log("The user data has been saved to cache.");
+            Y.one("#user-0").addClass("selected");
+            _activeNode = Y.one("#user-0");
+            _api.broadcast("show-user", users[0]);
+            _users = users;
+            return;
+        }
+
         // Make extra requests to get G-Avatar Icons.
         Y.each(tasks, function (value, key) {
             Y.jsonp(API_ENTRYPOINT + "users/" + key + "?callback={callback}", {
@@ -158,7 +170,7 @@ YUI.add("_list", function (Y) {
         _node.addClass("loading");
 
         url = API_ENTRYPOINT + "legacy/user/search/" + keyword +
-              "?callback={callback}";
+              "?sort=followers&callback={callback}";
         Y.jsonp(url, {
             on: {
                 success: _handleCallback,
