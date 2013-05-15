@@ -46,8 +46,8 @@ YUI.add("_list", function (Y) {
         Y.each(users, function (user, key) {
             // Some users lack of gravatar_id for unknown reason,
             // save these data so we can check by another Github API.
+            user.element_id = "user-" + key;
             if (!user.gravatar_id) {
-                user.element_id = "user-" + key;
                 tasks[user.login] = "#" + user.element_id;
             }
             html.push(_template(user));
@@ -55,6 +55,18 @@ YUI.add("_list", function (Y) {
 
         // Output the HTML.
         _node.one(".bd").setContent("<ul>" + html.join("") + "</ul>");
+
+        if (!Y.Object.size(tasks)) {
+            // Save to cache.
+            Y.log(_keyword);
+            _cache.add(_keyword, Y.JSON.stringify(users));
+            _api.log("The user data has been saved to cache.");
+            Y.one("#user-0").addClass("selected");
+            _activeNode = Y.one("#user-0");
+            _api.broadcast("show-user", users[0]);
+            _users = users;
+            return;
+        }
 
         // Make extra requests to get G-Avatar Icons.
         Y.each(tasks, function (value, key) {
@@ -149,7 +161,7 @@ YUI.add("_list", function (Y) {
         // Show activity indicator.
         _node.addClass("loading");
 
-        Y.jsonp(API_ENTRYPOINT + "legacy/user/search/" + keyword + "?callback={callback}", _handleCallback);
+        Y.jsonp(API_ENTRYPOINT + "legacy/user/search/" + keyword + "?sort=followers&callback={callback}", _handleCallback);
     };
 
     _handleViewload = function (e) {
